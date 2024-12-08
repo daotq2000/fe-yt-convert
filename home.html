@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Downloader</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #4caf50;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"],
+      select {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .preview {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #e7f3fe;
+        border-left: 6px solid #2196f3;
+      }
+
+      .faq {
+        margin-top: 30px;
+      }
+
+      .faq h2 {
+        color: #4caf50;
+      }
+
+      .faq-item {
+        margin: 10px 0;
+        padding: 10px;
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>YouTube Downloader</h1>
+      <input
+        type="text"
+        id="youtubeLink"
+        placeholder="Enter YouTube link here"
+      />
+      <select id="downloadType">
+        <option value="video">Video</option>
+        <option value="audio">Audio</option>
+      </select>
+      <button id="downloadButton">Download Video/Audio</button>
+
+      <div class="preview" id="previewSection" style="display: none">
+        <h3>Preview:</h3>
+        <video
+          id="videoPreview"
+          width="100%"
+          controls
+          style="display: none"
+        ></video>
+        <audio id="audioPreview" controls style="display: none"></audio>
+        <button id="localDownloadButton" style="display: none">
+          Download to Local
+        </button>
+      </div>
+
+      <div class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+          <strong>1. How do I use this tool?</strong>
+          <p>
+            Simply enter the YouTube link, select whether you want to download
+            video or audio, and click the download button.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>2. Is it free to use?</strong>
+          <p>Yes, this tool is completely free to use.</p>
+        </div>
+        <div class="faq-item">
+          <strong>3. What formats can I download?</strong>
+          <p>You can download videos in MP4 format and audio in MP3 format.</p>
+        </div>
+        <div class="faq-item">
+          <strong>4. Can I download playlists?</strong>
+          <p>
+            Currently, this tool only supports downloading individual videos.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>5. Is there a limit to the number of downloads?</strong>
+          <p>No, you can download as many videos as you want.</p>
+        </div>
+        <div class="faq-item">
+          <strong>6. How long does it take to download?</strong>
+          <p>
+            Download time depends on your internet speed and the size of the
+            video/audio file.
+          </p>
+        </div>
+        <div class="faq-item">
+          <strong>7. What should I do if I encounter an error?</strong>
+          <p>Refresh the page and try again.</p>
+        </div>
+        <div class="faq-item">
+          <strong>8. Can I use this on mobile?</strong>
+          <p>Yes, the tool is mobile-friendly.</p>
+        </div>
+      </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+              const HOST = "http://localhost:8080";
+              const PATH_API_DOWNLOAD_VIDEO = "/youtube/download-video";
+              const PATH_API_DOWNLOAD_AUDIO = "/youtube/download-audio";
+              var buttonSubmit = document.getElementById("downloadButton");
+    
+                  buttonSubmit.onclick = function (event) {
+                    event.preventDefault(); // Prevent the page from refreshing
+        
+                        var url = document.getElementById("youtubeLink").value;
+                    var format = document.getElementById("downloadType").value;
+                    var fullUrl = "";
+        
+                        switch (format) {
+                          case "audio":
+                                fullUrl = PATH_API_DOWNLOAD_AUDIO;
+                                break;
+                              case "video":
+                                fullUrl = PATH_API_DOWNLOAD_VIDEO;
+                                break;
+                            }
+        
+                        var uri = `${HOST}${fullUrl}?url=${encodeURIComponent(url)}`;
+        
+                        $.ajax({
+                              url: uri,
+                          type: "GET",
+                          xhrFields: {
+                            responseType: "blob", // Expect binary data
+                              },
+                      success: function (blob, status, xhr) {
+                            console.log("File downloaded successfully:", blob);
+                            // Extract the filename from the Content-Disposition header
+                                const contentDisposition = xhr.getResponseHeader(
+                                  "Content-Disposition"
+                                );
+                            const filename = contentDisposition
+                              ? contentDisposition
+                                      .split("filename=")[1]
+                                  .replace(/['"]/g, "")
+                              : "downloaded_file"; // Default filename if not provided
+            
+                                // Create a URL for the Blob
+                                    const blobUrl = window.URL.createObjectURL(blob);
+            
+                                // Create a temporary <a> element to trigger the download
+                            //         const a = document.createElement("a");
+                            // a.href = blobUrl;
+                            // a.download = filename; // Set the downloaded filename
+                            // document.body.appendChild(a); // Append the link
+                            // a.click(); // Trigger the download
+                            // document.body.removeChild(a); // Remove the link
+            
+                            //     // Revoke the Blob URL after the download
+                            //         window.URL.revokeObjectURL(blobUrl);
+                            var videoPreview = document.getElementById('videoPreview');
+                            videoPreview.src = blobUrl;
+                            videoPreview.style.display = '';
+                            // var 
+                          },
+                      error: function (xhr, status, error) {
+                            console.error("Error downloading the file:", error);
+                          },
+                    });
+                  };
+            });
+      </script>
+  </body>
+</html>
+
