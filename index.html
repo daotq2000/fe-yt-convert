@@ -4,7 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YouTube Downloader</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+      integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1014651997538036"
+    crossorigin="anonymous"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -73,6 +80,54 @@
         border: 1px solid #ddd;
         border-radius: 4px;
       }
+      .link-donwload {
+        background-color: royalblue;
+        color: white;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        border-color: white;
+        border-radius: 10px 10px 10px 10px;
+        padding: 8px 8px 8px 8px;
+        margin-top: 20px;
+      }
+      #downloadButton {
+        position: relative;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #4caf50;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      #downloadButton:hover {
+        background-color: #0056b3;
+      }
+
+      .loader {
+        border: 3px solid rgba(255, 255, 255, 0.3);
+        border-top: 3px solid white;
+        border-radius: 20%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
     </style>
   </head>
   <body>
@@ -87,7 +142,10 @@
         <option value="video">Video</option>
         <option value="audio">Audio</option>
       </select>
-      <button id="downloadButton">Download Video/Audio</button>
+      <button id="downloadButton">
+        <span class="button-text">Get Link Video/Audio</span>
+        <span class="loader" style="display: none"> </span>
+      </button>
 
       <div class="preview" id="previewSection" style="display: none">
         <h3>Preview:</h3>
@@ -98,9 +156,7 @@
           style="display: none"
         ></video>
         <audio id="audioPreview" controls style="display: none"></audio>
-        <button id="localDownloadButton" style="display: none">
-          Download to Local
-        </button>
+        <a class="link-donwload" id="link-download">Download</a>
       </div>
 
       <div class="faq">
@@ -148,77 +204,107 @@
       </div>
     </div>
     <script>
-        $(document).ready(function () {
-              const HOST = "https://4964-35-240-193-2.ngrok-free.app";
-              const PATH_API_DOWNLOAD_VIDEO = "/youtube/download-video";
-              const PATH_API_DOWNLOAD_AUDIO = "/youtube/download-audio";
-              var buttonSubmit = document.getElementById("downloadButton");
-    
-                  buttonSubmit.onclick = function (event) {
-                    event.preventDefault(); // Prevent the page from refreshing
-        
-                        var url = document.getElementById("youtubeLink").value;
-                    var format = document.getElementById("downloadType").value;
-                    var fullUrl = "";
-        
-                        switch (format) {
-                          case "audio":
-                                fullUrl = PATH_API_DOWNLOAD_AUDIO;
-                                break;
-                              case "video":
-                                fullUrl = PATH_API_DOWNLOAD_VIDEO;
-                                break;
-                            }
-        
-                        var uri = `${HOST}${fullUrl}?url=${encodeURIComponent(url)}`;
-        
-                        $.ajax({
-                              url: uri,
-                              headers:{
-                                "ngrok-skip-browser-warning": "69420"
-                              },
-                          type: "GET",
-                          xhrFields: {
-                            responseType: "blob", // Expect binary data
-                              },
-                      success: function (blob, status, xhr) {
-                            console.log("File downloaded successfully:", blob);
-                            // Extract the filename from the Content-Disposition header
-                                const contentDisposition = xhr.getResponseHeader(
-                                  "Content-Disposition"
-                                );
-                            const filename = contentDisposition
-                              ? contentDisposition
-                                      .split("filename=")[1]
-                                  .replace(/['"]/g, "")
-                              : "downloaded_file"; // Default filename if not provided
-            
-                                // Create a URL for the Blob
-                                    const blobUrl = window.URL.createObjectURL(blob);
-            
-                                // Create a temporary <a> element to trigger the download
-                            //         const a = document.createElement("a");
-                            // a.href = blobUrl;
-                            // a.download = filename; // Set the downloaded filename
-                            // document.body.appendChild(a); // Append the link
-                            // a.click(); // Trigger the download
-                            // document.body.removeChild(a); // Remove the link
-            
-                            //     // Revoke the Blob URL after the download
-                            //         window.URL.revokeObjectURL(blobUrl);
-                            document.getElementById('previewSection').style.display = 'block';
-                            var videoPreview = document.getElementById('videoPreview');
-                            videoPreview.src = blobUrl;
-                            videoPreview.style.display = 'block';
-                            // var 
-                          },
-                      error: function (xhr, status, error) {
-                            console.error("Error downloading the file:", error);
-                          },
-                    });
-                  };
-            });
-      </script>
+      $(document).ready(function () {
+        const HOST = "https://d4d0-35-240-193-2.ngrok-free.app";
+        const PATH_API_DOWNLOAD_VIDEO = "/youtube/download-video";
+        const PATH_API_DOWNLOAD_AUDIO = "/youtube/download-audio";
+        var buttonSubmit = document.getElementById("downloadButton");
+
+        buttonSubmit.onclick = function (event) {
+          event.preventDefault(); // Prevent the page from refreshing
+
+          var url = document.getElementById("youtubeLink").value;
+          var format = document.getElementById("downloadType").value;
+          var fullUrl = "";
+          const loader = buttonSubmit.querySelector(".loader");
+          const buttonText = buttonSubmit.querySelector(".button-text");
+          loader.style.display = "inline-block";
+          buttonText.style.display = "none";
+          buttonSubmit.style.height = "50px";
+          buttonSubmit.disabled = true;
+          switch (format) {
+            case "audio":
+              fullUrl = PATH_API_DOWNLOAD_AUDIO;
+              break;
+            case "video":
+              fullUrl = PATH_API_DOWNLOAD_VIDEO;
+              break;
+          }
+
+          var uri = `${HOST}${fullUrl}?url=${encodeURIComponent(url)}`;
+
+          $.ajax({
+            url: uri,
+            headers: {
+              "ngrok-skip-browser-warning": "true",
+              "Access-Control-Allow-Origin": "*",
+            },
+            type: "GET",
+            xhrFields: {
+              responseType: "blob", // Expect binary data
+            },
+            success: function (blob, status, xhr) {
+              if (status.toString().includes('202')) {
+                alert("Occurrent error, please try again later");
+                postActions(loader,buttonText,buttonSubmit);
+                return;
+              }
+              console.log("File downloaded successfully:", blob);
+              // Extract the type from the Content-Disposition header
+              const contentDisposition = xhr.getResponseHeader(
+                "Content-Disposition"
+              );
+              const filename = contentDisposition
+                ? contentDisposition.split("filename=")[1].replace(/['"]/g, "")
+                : "downloaded_file"; // Default filename if not provided
+              console.log(filename);
+              // Create a URL for the Blob
+              const blobUrl = window.URL.createObjectURL(blob);
+
+              // Create a temporary <a> element to trigger the download
+              const a = document.getElementById("link-download");
+              a.href = blobUrl;
+              a.download = filename; // Set the downloaded filename
+
+              document.getElementById("previewSection").style.display = "block";
+              // Revoke the Blob URL after the download
+              if (blob.type.includes("video")) {
+                var videoPreview = document.getElementById("videoPreview");
+                videoPreview.src = blobUrl;
+                videoPreview.style.display = "block";
+                document.getElementById("link-download").innerHTML =
+                  "Download Video";
+                document.getElementById("audioPreview").style.display = "none";
+              } else {
+                var videoPreview = document.getElementById("audioPreview");
+                videoPreview.src = blobUrl;
+                videoPreview.style.display = "block";
+                document.getElementById("link-download").innerHTML =
+                  "Download Audio";
+                document.getElementById("videoPreview").style.display = "none";
+              }
+              setTimeout(() => {
+                window.URL.revokeObjectURL(blobUrl);
+              }, 600000);
+              postActions(loader,buttonText,buttonSubmit);
+            },
+            error: function (xhr, status, error) {
+              console.log("error:");
+              console.log("status:", status.toString());
+              if (status.includes("error")) {
+                alert("Occurrent error, please try again later");
+              }
+              postActions(loader,buttonText,buttonSubmit);
+            },
+          });
+        };
+        function postActions(loader,buttonText,buttonSubmit) {
+          loader.style.display = "none";
+          buttonText.style.display = "inline";
+          buttonSubmit.style.height = "38px";
+          buttonSubmit.disabled = false;
+        }
+      });
+    </script>
   </body>
 </html>
-
