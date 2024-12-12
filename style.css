@@ -17598,7 +17598,8 @@ table{
     justify-content: center;
     align-items: center;
     height: 70px;
-    /* background: black; */
+
+    background: whitesmoke;
   }
   
   /* SPINNING CIRCLE */
