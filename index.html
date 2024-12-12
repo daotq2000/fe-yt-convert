@@ -44,7 +44,7 @@
   <body>
     <div class="container">
       <h1 class="title">YouTube Downloader</h1>
-      <div class="input-group mb-3">
+      <div id="form" class="input-group mb-3">
         <input required="true" type="text" id="youtubeLink" class="form-control" placeholder="Enter YouTube link here" aria-describedby="basic-addon1">
       </div>
       
@@ -170,17 +170,29 @@
         }
        
         buttonSubmit.onclick = function (event) {
+          var url = document.getElementById("youtubeLink").value;
+          const elementError = '<p style="width:100%" class="alert alert-danger" role="alert">Please enter a valid YouTube link</p>';
+          if(url == "" || url == null || url.length == 0){
+            var errorElement = $('#form').find('.alert');
+            debugger
+            if(errorElement.length == 0){
+              $('#form').append(elementError);
+            }
+            return;
+          }else{
+            $('#form').find('.alert').remove();
+          }
           document.getElementById("downloading2").style.display = "";
           document.getElementById("loader-spin").style.display = "";
           document.getElementById("downloadButton").style.display = "none";
           event.preventDefault(); // Prevent the page from refreshing
-          var url = document.getElementById("youtubeLink").value;
           var fullUrl = "";
           const loader = buttonSubmit.querySelector(".loader");
           const buttonText = buttonSubmit.querySelector(".button-text");
           var uri = `${HOST}${fullUrl}${PATH_API_DOWNLOAD_VIDEO}?retry=undefined&platform=youtube&mhash=29588b800780f76d`;
           var body = `url=${url}&ajax=1&lang=en&cftoken0.Z_fo0G1cvKonhv9UeeDr3kHNwJg37xHpbScTQd_54bMr4j1telmYmtTpdyzUciEvKkDZ_7a524kO2Bdwi0FVZpTPrFWjkisZqu64a6uTLJq8BSK5y60HW0Lmpr9qYGw_VP0PJOMMt4Z0f4RiKla0hHXONYzVHxIPbiSRIRcbprCR1mRa6SwI0ZDSJrer8U_LSr8eDHYp9XIiqb31t82hnSO4aLIhNx_bJCsxNooVtIeVL8WWY5z5kLKKT7y1qnM1BbMKbxQqU4SG4OCwIsi9UCVohtajgdf0V6L1CT5iw842eSEbAaupcxARJBqzlELYmJTenjgctR5d_9IRxJncNzXzav7oAlng7DDdQXax5i5pfJcuVee29xthaEah0MVshpa1gWxCt-0bFn09hYGdY1nbOCrBygN9sNVHUKz_LInAN-NQx5KyKmwqTh02K9ta2OdcwMhirtvsvyFg-PLhG0J6JaK5qrgTlQccXaCSbHuhCUOlNsqsJQDF4d8emywOttZpiWtpHO5zaA8-mLHhCf3ss4XHbkLQRUWVjbAJ2gZl0RrW1U4_4FLi0j2JvnZoeLVQZM3vNvolnS9YSjhWwWn_yF1wFRrU0svRi_9jt9413u1CuKbeU9ImezijnHQ1AllDAoPQ_Vb5HmCVWQZyCzT56kicIWNZgPHz6NqoNIn_TkzaJyITW3ApgJ4gJaK3ykfEaB3RhCY-S97c_RaS_W3n1KlCbaUQroPXAezABds.z-8kDc0vlwAtJuyvcrZepQ.9cc7dd2a412bf3b4a24673a2c8b576454fe929666816ad6dbcc9a603e0c3f6d8`;
-          fetchPreview(uri, body);;
+          fetchPreview(uri, body);
+
         };
       });
 
