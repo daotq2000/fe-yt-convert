@@ -17597,7 +17597,7 @@ table{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 200px;
+    height: 70px;
     /* background: black; */
   }
   
@@ -17943,4 +17943,9 @@ table{
     100% {
       transform: rotate(360deg);
     }
+  }.downloading{
+    text-align: center;
+    color:#4caf50;
+    font-size: medium;
+    font-weight: bold;
   }
