@@ -204,6 +204,7 @@
               document.getElementById("downloading2").style.display = "none";
               if(!response.includes("download(")){
                 alert("An error occurred, please try again");
+                return;
               }
             },
             error: function (xhr, status, error) {
