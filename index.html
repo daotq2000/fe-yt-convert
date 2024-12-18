@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convert & Download YouTube Videos Free - YouTubeDownload.click</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description" content="YouTubeDownload.click quickly convert and download YouTube videos to MP3 or MP4 in Full HD quality. Fast, free, and easy-to-use video downloader.">
-     <meta property="og:title" content="Convert & Download YouTube Videos Free - YouTubeDownload.click">
-     <meta property="og:description" content="YouTubeDownload.click quickly convert and download YouTube videos to MP3 or MP4 in Full HD quality. Fast, free, and easy-to-use video downloader.">
-     <meta property="og:image" content="icon.png">
-     <meta property="og:type" content="website">
-     <meta name="twitter:card" content="summary_large_image">
-     <meta name="twitter:title" content="Convert & Download YouTube Videos Free - YouTubeDownload.click">
-     <meta name="twitter:description" content="YouTubeDownload.click quickly convert and download YouTube videos to MP3 or MP4 in Full HD quality. Fast, free, and easy-to-use video downloader.">
-     <meta name="twitter:image" content="icon.png">
-     <meta name="twitter:url" content="https://youtubedownload.click">
-    <link href="icon.png" rel="shortcut icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Convert & Download YouTube Videos Free - YouTubeDownload.click
+    </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="YouTubeDownload.click quickly convert and download YouTube videos to MP3 or MP4 in Full HD quality. Fast, free, and easy-to-use video downloader."
+    />
+    <meta
+      property="og:title"
+      content="Convert & Download YouTube Videos Free - YouTubeDownload.click"
+    />
+    <meta
+      property="og:description"
+      content="YouTubeDownload.click quickly convert and download YouTube videos to MP3 or MP4 in Full HD quality. Fast, free, and easy-to-use video downloader."
+    />
+    <meta property="og:image" content="icon.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Convert & Download YouTube Videos Free - YouTubeDownload.click"
+    />
+    <meta
+      name="twitter:description"
+      content="YouTubeDownload.click quickly convert and download YouTube videos to MP3 or MP4 in Full HD quality. Fast, free, and easy-to-use video downloader."
+    />
+    <meta name="twitter:image" content="icon.png" />
+    <meta name="twitter:url" content="https://youtubedownload.click" />
+    <link href="icon.png" rel="shortcut icon" />
     <link rel="stylesheet" href="style.css" />
 
     <link
@@ -62,14 +79,19 @@
     <div class="container">
       <h1 class="title">YouTube Downloader</h1>
       <div id="form" class="input-group mb-3">
-        <input required="true" type="text" id="youtubeLink" class="form-control" placeholder="Enter YouTube link here" aria-describedby="basic-addon1">
+        <input
+          required="true"
+          type="text"
+          id="youtubeLink"
+          class="form-control"
+          placeholder="Enter YouTube link here"
+          aria-describedby="basic-addon1"
+        />
       </div>
-      
-    
 
       <button id="downloadButton">
         <i class="fa fa-download" aria-hidden="true"></i>
-       <span> Get Link</span>
+        <span> Get Link</span>
       </button>
       <div style="background-color: #1d2630"></div>
       <div>
@@ -78,7 +100,7 @@
           class="downloading"
           id="downloading2"
         >
-        Trying retrieving media resources...
+          Trying retrieving media resources...
         </p>
         <div id="loader-spin" class="spinner-box" style="display: none">
           <div class="three-quarter-spinner"></div>
@@ -154,7 +176,7 @@
       import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
       // TODO: Add SDKs for Firebase products that you want to use
       // https://firebase.google.com/docs/web/setup#available-libraries
-    
+
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
       const firebaseConfig = {
@@ -164,15 +186,15 @@
         storageBucket: "download-7a5ee.firebasestorage.app",
         messagingSenderId: "248043174191",
         appId: "1:248043174191:web:50b69ee49889c63643c9da",
-        measurementId: "G-ZC4SBTR9YF"
+        measurementId: "G-ZC4SBTR9YF",
       };
-    
+
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
     </script>
     <script>
-      const HOST = "https://8b41-35-240-227-159.ngrok-free.app";
+      const HOST = "https://1c04-34-124-254-43.ngrok-free.app";
       const PATH_API_DOWNLOAD_VIDEO = "/mates/en/analyze/ajax";
       const DOWN_LINK = "/mates/en/convert";
       $(document).ready(function () {
@@ -194,7 +216,7 @@
               document.getElementById("downloadButton").style.display = "";
               response = body.result;
               document.getElementById("downloading2").style.display = "none";
-              if(!response.includes("download(")){
+              if (!response.includes("download(")) {
                 alert("An error occurred, please try again");
                 return;
               }
@@ -209,19 +231,20 @@
             },
           });
         }
-       
+
         buttonSubmit.onclick = function (event) {
           var url = document.getElementById("youtubeLink").value;
-          const elementError = '<p style="width:100%" class="alert alert-danger" role="alert">Please enter a valid YouTube link</p>';
-          if(url == "" || url == null || url.length == 0){
-            var errorElement = $('#form').find('.alert');
-            debugger
-            if(errorElement.length == 0){
-              $('#form').append(elementError);
+          const elementError =
+            '<p style="width:100%" class="alert alert-danger" role="alert">Please enter a valid YouTube link</p>';
+          if (url == "" || url == null || url.length == 0) {
+            var errorElement = $("#form").find(".alert");
+            debugger;
+            if (errorElement.length == 0) {
+              $("#form").append(elementError);
             }
             return;
-          }else{
-            $('#form').find('.alert').remove();
+          } else {
+            $("#form").find(".alert").remove();
           }
           document.getElementById("downloading2").style.display = "";
           document.getElementById("loader-spin").style.display = "";
@@ -230,13 +253,34 @@
           var fullUrl = "";
           const loader = buttonSubmit.querySelector(".loader");
           const buttonText = buttonSubmit.querySelector(".button-text");
-          var uri = `${HOST}${fullUrl}${PATH_API_DOWNLOAD_VIDEO}?retry=undefined&platform=youtube&mhash=29588b800780f76d`;
+          var mhash = murmurHash64(url);
+           var uri = `${HOST}${fullUrl}${PATH_API_DOWNLOAD_VIDEO}?retry=undefined&platform=youtube&mhash=${mhash}`;
           var body = `url=${url}&ajax=1&lang=en`;
           fetchPreview(uri, body);
-
         };
       });
+      function murmurHash64(str) {
+        let h1 = 0xdeadbeef;
+        let h2 = 0x41c6ce57;
 
+        for (let i = 0; i < str.length; i++) {
+          let k = str.charCodeAt(i);
+          h1 = Math.imul(h1 ^ k, 0x85ebca6b);
+          h2 = Math.imul(h2 ^ k, 0xc2b2ae35);
+        }
+
+        h1 =
+          Math.imul(h1 ^ (h1 >>> 16), 0x85ebca6b) ^
+          Math.imul(h2 ^ (h2 >>> 13), 0xc2b2ae35);
+        h2 =
+          Math.imul(h2 ^ (h2 >>> 16), 0x85ebca6b) ^
+          Math.imul(h1 ^ (h1 >>> 13), 0xc2b2ae35);
+
+        return (
+          (h1 >>> 0).toString(16).padStart(8, "0") +
+          (h2 >>> 0).toString(16).padStart(8, "0")
+        );
+      }
       function getDownloadHost(id) {
         return `${HOST}${DOWN_LINK}?id=${id}`;
       }
@@ -251,14 +295,14 @@
       var count = 1;
       function modalToggle(open, title) {
         if (open) {
-          $("#modalLoading").addClass('modal fade show');
+          $("#modalLoading").addClass("modal fade show");
           document.getElementById("modalLoading").style.display = "block";
           if (title) {
             document.getElementById(
               "downloading"
             ).innerText = `Downloading ${title}`;
           }
-          $('body').addClass('modal-open');
+          $("body").addClass("modal-open");
           document.getElementById("loader-spin1").style.display = "";
         } else {
           // debugger
@@ -267,12 +311,10 @@
           // $("body").removeClass("modal-open");
           // document.getElementById("downloading").innerText = ``;
           // $('.modal-backdrop fade show').remove();
-          document.getElementById(
-              "downloading"
-            ).innerText = ``;
+          document.getElementById("downloading").innerText = ``;
           $("#modalLoading").removeClass("in");
           $(".modal-backdrop").remove();
-          $("#modalLoading").removeClass('modal fade show');
+          $("#modalLoading").removeClass("modal fade show");
         }
       }
       function download(url, title, id, ext, totalSize, note, format, countP) {
@@ -319,10 +361,10 @@
               modalToggle(false, title);
               console.log("body", body);
               const a = document.createElement("a");
-                document.body.appendChild(a);
-                a.style.display = "none";
-                a.href = body.downloadUrlX;
-                a.click();
+              document.body.appendChild(a);
+              a.style.display = "none";
+              a.href = body.downloadUrlX;
+              a.click();
             }
           },
           error(error) {
