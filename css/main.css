@@ -2275,7 +2275,7 @@ a.ttm-btn-bgcolor-skincolor:hover {
 }
 
 .site-branding img {
-    max-height: 55px;
+    max-height: 89px;
 }
 
 .ttm-header-style-01 .site-branding img {
@@ -3746,4 +3746,30 @@ ul.info-list li i {
 
 .member-contact-form {
     padding: 30px;
+}
+#form_sb #btn-submit i, #form_sb #btn-submit-thumbnail i {
+    text-align: center;
+    font-size: 30px;
+    float: left;
+    margin-left: 1%;
+    width: 14%;
+    background: #171A21;
+    color: #ffffff;
+    display: table-cell;
+    padding: 13px 0 13px 0;
+    border-radius: 30px;
+    cursor: pointer;
+}
+#form_sb input[type=text] {
+    font-size: 16px;
+    padding: 28px 20px 28px 20px;
+    width: 85%;
+    height: 30px;
+    float: left;
+    display: table-cell;
+    border-radius: 30px;
+    border: none;
+    background: #ffffff;
+    border: none;
+    padding-right: 3rem;
 }

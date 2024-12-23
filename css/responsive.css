@@ -49,6 +49,9 @@
 
 @media only screen and (min-width: 1200px) {
     /*topbar*/
+    .site-main{
+        margin-top: 148px;
+    }
     .ttm-header-style-01 .ttm-topbar-wrapper,
     .ttm-header-style-02 .ttm-topbar-wrapper {
         background-color: #1e2637;
@@ -466,7 +469,7 @@
         line-height: 93px;
     }
     .ttm-header-style-04 .site-branding img {
-        max-height: 47px;
+        max-height: 106px;
     }
     .ttm-header-icons:before {
         display: block;
@@ -1550,7 +1553,10 @@
 @media (max-width: 575px) {
     .ttm-header-style-01 .site-branding img,
     .site-branding img {
-        max-height: 40px;
+        max-height: 89px;
+    }
+    .site-main{
+
     }
     .ttm-header-icons .ttm-header-icon {
         margin-left: 0;
