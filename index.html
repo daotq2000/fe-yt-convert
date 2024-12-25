@@ -305,6 +305,7 @@
                                 style="margin-top: 20px; background-size: 100%; background-repeat: no-repeat;"></div>
                             <div id="result" class="mt-4" style="background-size: 100%; background-repeat: no-repeat;">
                             </div>
+
                             <div class="preview" id="previewSection" style="display: none">
 
                             </div>
@@ -577,7 +578,6 @@
             </section>
             <!-- services-section end -->
 
-
             <!-- team-section -->
 
             <!-- team-section end -->
@@ -676,6 +676,7 @@
     <!-- Javascript end-->
     <script>
         const HOST = "https://1c04-34-124-254-43.ngrok-free.app";
+        // const HOST = "http://localhost:8080";
         const PATH_API_DOWNLOAD_VIDEO = "/mates/en/analyze/ajax";
         const DOWN_LINK = "/mates/en/convert";
         $(document).ready(function () {
@@ -690,15 +691,16 @@
                     success: function (blob, status, xhr) {
                         console.log(blob);
                         var body = JSON.parse(blob);
-                        var previewSection = document.getElementById("previewSection");
+                        var previewSection = document.getElementById("result");
                         previewSection.style.display = "";
                         previewSection.innerHTML = body.result;
                         response = body.result;
-                        console.log(response.includes('noaudio'))
+
                         doneFetching();
                         // if (!response.includes("download(")) {
                         //     alert("An error occurred, please try again");
                         // }
+                        executeScriptsFromHTML(response);
                     },
                     error: function (xhr, status, error) {
                         console.log(xhr);
@@ -708,7 +710,6 @@
                     },
                 });
             }
-
             buttonSubmit.onclick = function (event) {
                 var url = document.getElementById("youtubeLink").value;
                 const elementError =
@@ -729,16 +730,17 @@
                 const buttonText = buttonSubmit.querySelector(".button-text");
                 var mhash = murmurHash64(url);
                 var uri = `${HOST}${fullUrl}${PATH_API_DOWNLOAD_VIDEO}?retry=undefined&platform=youtube&mhash=${mhash}`;
-                var body = `url=${url}&ajax=1&lang=en&cftoken=0.8YOzyGmgUmOkveUNjU78dCZWUEOtwPAdJawnfU2tA6UTNt8uYuZ4XlTODPafqDqBgJfI0HzH7smClXRqMckTfKAZQnHSrJU3_7pO4-eUgAoZzJsRVcIUoNgZst0Rs7sPfwVjIUuuzlGmyDPAHoiI-Nqdd7UFkQouZSxc-sPBR6aJNZqOyOAMN_AD0I6_BV2pKQIB3rtTzZInx0qqgCAqN0zXP8TKdxjRcnt5xWQyLGgdioqqaki7to8VoHROWkujYEoztx805bCqzleAOndmlIg6UYOOgDCQnyYs25p7CA5cbLsUojfdKnPTfMZqsmDIQOsAQhZTQFCB11mW8ZGxpuzE0aifiuCczUsacw4VllKnL3ewueU5u8A1K_sNpqLIu7Me33ido552rBTi1dUWAuR-1hGh3ThrPBTlGw0flh5woy5GMJW_aXgBmg6N8yxiSpVKW9ztcPj5OG4OgH-2kik-zMnMFkE1XDp1xvHLZDjF2UmNdlPGSffdXlGEPaqQTf_pJ1AZYO9KJkr-CU5o53-giorypikjwBm4ShDcBAt23Mu7TCViETBrWaVYf1roHcjKtg7bEtOd7n0Wb3S0vTSQUrlyDyJWZawXyTZoU53Hm9BZX8NDCVED-p2m-myIpKCG0snZtKaKfnZESw3RXzerWUjXGAXGFBLqH4whUnz2yR13p4d6KTIXMpfq2kciTxQORncCI3UMmaobjYlA7P-mJBDsAxSew59xuNt3hfE.AF4SHWAj0BH_aGjC1fgS5w.0a5d267f9f46f7461940327154ee8677228ee5ab0a77d18f16b2000f8fdc20f8`;
+                var body = `url=${url}&ajax=1&lang=en`;
                 preloading();
                 fetchPreview(uri, body);
+                
             };
         });
         function preloading() {
             document.getElementById('result-wait').style.display = '';
             document.getElementById('text-bar-loading1').innerText = 'Fetching preview media resources....';
             let percent = 0;
-            setInterval(() => {
+            setTimeout(() => {
                 if (percent >= 90) return;
                 document.getElementById('bar-loading1').setAttribute('data-percent', `${percent}%`);
                 document.getElementById('process-bar-loading1').style.width = `${percent}%`;
@@ -756,6 +758,25 @@
             setTimeout(() => {
                 document.getElementById('bar-loading1').style.display = 'none';
             }, 1000)
+        }
+        function executeScriptsFromHTML(htmlString) {
+            // Create a temporary DOM element to parse HTML
+            const tempDiv = document.createElement('div');
+            tempDiv.innerHTML = htmlString;
+
+            // Extract scripts and execute them
+            const scripts = tempDiv.querySelectorAll('script');
+            scripts.forEach(script => {
+                if (script.src) {
+                    // If the script has a src, load it dynamically
+                    const newScript = document.createElement('script');
+                    newScript.src = script.src;
+                    document.body.appendChild(newScript);
+                } else {
+                    // Inline script, execute the content
+                    eval(script.textContent);
+                }
+            });
         }
         function murmurHash64(str) {
             let h1 = 0xdeadbeef;
