@@ -6,6 +6,34 @@
     <title>Document</title>
   </head>
   <body>
-
+      <script>
+        fetch("http://localhost:8080/mates/en/analyze/ajax?retry=undefined&platform=facebook", {
+  "headers": {
+    "accept": "application/json, text/javascript, */*; q=0.01",
+    "accept-language": "en-US,en;q=0.9",
+    "cache-control": "no-cache",
+    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
+    "pragma": "no-cache",
+    "priority": "u=1, i",
+    "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
+    "sec-ch-ua-mobile": "?0",
+    "sec-ch-ua-platform": "\"Linux\"",
+    "sec-fetch-dest": "empty",
+    "sec-fetch-mode": "cors",
+    "sec-fetch-site": "same-origin",
+    "x-requested-with": "XMLHttpRequest"
+  },
+  "referrer": "http://localhost:8080/",
+  "referrerPolicy": "strict-origin-when-cross-origin",
+  "body": "url=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1217291746041999&ajax=1&lang=en",
+  "method": "POST",
+  "mode": "cors",
+  "credentials": "include"
+}).then(res =>{
+  console.log(res)
+}).then(res =>{
+  console.log(res.json())
+});
+      </script>
   </body>
 </html>

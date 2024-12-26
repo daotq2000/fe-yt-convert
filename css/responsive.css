@@ -6,6 +6,9 @@
     .ttm-right-span .ttm-col-wrapper-bg-layer {
         margin-right: -500px;
     }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
 }
 
 @media only screen and (max-width: 1800px) and (min-width: 1601px) {
@@ -16,6 +19,9 @@
     .ttm-right-span .ttm-col-wrapper-bg-layer,
     .col-bg-img-one .ttm-right-span .ttm-col-wrapper-bg-layer {
         margin-right: -400px;
+    }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
     }
 }
 
@@ -28,6 +34,9 @@
     .col-bg-img-one .ttm-right-span .ttm-col-wrapper-bg-layer {
         margin-right: -300px;
     }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
 }
 
 @media only screen and (max-width: 1400px) and (min-width: 1171px) {
@@ -39,18 +48,24 @@
     .col-bg-img-one .ttm-right-span .ttm-col-wrapper-bg-layer {
         margin-right: -200px;
     }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
 }
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1170px
     }
+     .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
     /*topbar*/
     .site-main{
-        margin-top: 148px;
+        margin-top: 144px;
     }
     .ttm-header-style-01 .ttm-topbar-wrapper,
     .ttm-header-style-02 .ttm-topbar-wrapper {
@@ -540,6 +555,9 @@
 
 @media all and (max-width: 1199px) {
     /* Header */
+    .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
     header .container {
         max-width: 100%;
     }
@@ -898,6 +916,9 @@
     .ttm-row.aboutus-section-style3 {
         padding-bottom: 170px;
     }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
 }
 
 @media only screen and (max-width: 991px) and (min-width: 768px) {
@@ -910,6 +931,9 @@
     .featured-imagebox-team.style1 .featured-content {
         margin: -25px 15px 5px;
     }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -921,6 +945,9 @@
     .sidebar .col-lg-3.widget-area {
         flex: 0 0 30%;
         max-width: 30%;
+    }
+    .jarallax{
+        padding: 20px 20px 20px 20px;
     }
 }
 
@@ -1668,5 +1695,16 @@
     }
     table.shop_table .product-thumbnail img {
         display: none;
+    }
+    .container{
+        width: 100%;
+    }
+    .jarallax{
+        padding: 5px 5px 5px 5px;
+    }
+    h1 {
+        font-size: 30px;
+        line-height: 50px;
+        text-transform: uppercase;
     }
 }
