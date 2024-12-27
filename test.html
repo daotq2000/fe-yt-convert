@@ -1,39 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-      <script>
-        fetch("http://localhost:8080/mates/en/analyze/ajax?retry=undefined&platform=facebook", {
-  "headers": {
-    "accept": "application/json, text/javascript, */*; q=0.01",
-    "accept-language": "en-US,en;q=0.9",
-    "cache-control": "no-cache",
-    "content-type": "application/x-www-form-urlencoded; charset=UTF-8",
-    "pragma": "no-cache",
-    "priority": "u=1, i",
-    "sec-ch-ua": "\"Chromium\";v=\"130\", \"Google Chrome\";v=\"130\", \"Not?A_Brand\";v=\"99\"",
-    "sec-ch-ua-mobile": "?0",
-    "sec-ch-ua-platform": "\"Linux\"",
-    "sec-fetch-dest": "empty",
-    "sec-fetch-mode": "cors",
-    "sec-fetch-site": "same-origin",
-    "x-requested-with": "XMLHttpRequest"
-  },
-  "referrer": "http://localhost:8080/",
-  "referrerPolicy": "strict-origin-when-cross-origin",
-  "body": "url=https%3A%2F%2Fwww.facebook.com%2Fwatch%2F%3Fv%3D1217291746041999&ajax=1&lang=en",
-  "method": "POST",
-  "mode": "cors",
-  "credentials": "include"
-}).then(res =>{
-  console.log(res)
-}).then(res =>{
-  console.log(res.json())
-});
-      </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="tabs row">
+    <div class="col-xs-12 col-12 col-sm-7 col-md-7 ">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="mp4" aria-labelledby="mp4-tab">
+          <table class="table table-bordered table-hover table-responsive-sm">
+            <tbody>
+              <tr>
+                <td colspan="3" align="left">
+                  <svg style="width: 16px;height: auto;margin: -5px 5px 0 0;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 512 512">
+                    <path fill="currentColor"
+                      d="M499.1 6.3c8.1 6 12.9 15.6 12.9 25.7v72V368c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V147L192 223.8V432c0 44.2-43 80-96 80s-96-35.8-96-80s43-80 96-80c11.2 0 22 1.6 32 4.6V200 128c0-14.1 9.3-26.6 22.8-30.7l320-96c9.7-2.9 20.2-1.1 28.3 5z">
+                    </path>
+                  </svg>
+                  <strong>Audio</strong>
+                </td>
+              </tr>
+              <tr>
+                <td> MP3 </td>
+                <td>23.1M</td>
+                <td class="text-center">
+                  <a class="btn w-100 btn-success" data-fid="HDsNq1zQ4oQ" data-ffid="140"
+                    data-nfunc="https%3A%2F%2Fan10.genyoutube.online%2F03dbdfab.nfunc.js"
+                    data-url="https://rr5---sn-h5q7knee.googlevideo.com/videoplayback?expire=1735319102&amp;ei=3oluZ5vZDZrRp-oP0a3awA4&amp;ip=188.114.111.27&amp;id=o-AE4oTIsCezxMbpSFmEPN5MHq4ZZMtifNaamTqTf9sosF&amp;itag=140&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1735297502%2C&amp;mh=2A&amp;mm=31%2C29&amp;mn=sn-h5q7knee%2Csn-h5qzened&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=24&amp;rms=au%2Cau&amp;initcwndbps=876250&amp;bui=AfMhrI-N1U6ClQZ0F3qF1aoi5MJEGZeN9vipqAxGDTJtKa5VDI-x2FvvRLlC3Bx0IUknwY4XtWLM7NTe&amp;vprv=1&amp;svpuc=1&amp;xtags=drc%3D1&amp;mime=audio%2Fmp4&amp;ns=iX8jKtkI9RMof03HvWcPc-0Q&amp;rqh=1&amp;gir=yes&amp;clen=24225240&amp;dur=1496.804&amp;lmt=1733512017910275&amp;mt=1735297276&amp;fvip=4&amp;keepalive=yes&amp;fexp=51326932%2C51331020%2C51335594%2C51371294&amp;c=MWEB&amp;sefc=1&amp;txp=5532434&amp;n=32JcBYlmJ2PR8u-SD&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cxtags%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRAIgZQslBuPSMUGhdjA-ELeYTn8fZ0qMklBDSHhFjjFU_OACIAWI-q_WhXwxYaB8fN-iWw6MQZoOPMRcQrxXL4yhRSbS&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRgIhAIJshueRK-Nendvtdc6ZfQBogkrEhzCZibHBr20WCBCeAiEAoPZEpXtK_9O-2ayv-C4regrriCxMLPcpU64yG3a8YuE%3D&amp;title=%5BReview+Phim%5D+C%C3%B4+G%C3%A1i+C%C3%B3+%C4%90%C3%B4i+M%E1%BA%AFt+%C3%82m+D%C6%B0%C6%A1ng+Ch%E1%BA%A1m+Tr%C3%A1n+B%C3%A0+K%E1%BA%B9+%C4%90%C3%B4+Th%E1%BB%8B+Nh%E1%BA%ADt+B%E1%BA%A3n"
+                    target="_blank" rel="nofollow"
+                    href="https://rr5---sn-h5q7knee.googlevideo.com/videoplayback?expire=1735319102&amp;ei=3oluZ5vZDZrRp-oP0a3awA4&amp;ip=188.114.111.27&amp;id=o-AE4oTIsCezxMbpSFmEPN5MHq4ZZMtifNaamTqTf9sosF&amp;itag=140&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1735297502%2C&amp;mh=2A&amp;mm=31%2C29&amp;mn=sn-h5q7knee%2Csn-h5qzened&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=24&amp;rms=au%2Cau&amp;initcwndbps=876250&amp;bui=AfMhrI-N1U6ClQZ0F3qF1aoi5MJEGZeN9vipqAxGDTJtKa5VDI-x2FvvRLlC3Bx0IUknwY4XtWLM7NTe&amp;vprv=1&amp;svpuc=1&amp;xtags=drc%3D1&amp;mime=audio%2Fmp4&amp;ns=iX8jKtkI9RMof03HvWcPc-0Q&amp;rqh=1&amp;gir=yes&amp;clen=24225240&amp;dur=1496.804&amp;lmt=1733512017910275&amp;mt=1735297276&amp;fvip=4&amp;keepalive=yes&amp;fexp=51326932%2C51331020%2C51335594%2C51371294&amp;c=MWEB&amp;sefc=1&amp;txp=5532434&amp;n=FZ7vK_0aYO8NwA&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cxtags%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cdur%2Clmt&amp;sig=AJfQdSswRAIgZQslBuPSMUGhdjA-ELeYTn8fZ0qMklBDSHhFjjFU_OACIAWI-q_WhXwxYaB8fN-iWw6MQZoOPMRcQrxXL4yhRSbS&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRgIhAIJshueRK-Nendvtdc6ZfQBogkrEhzCZibHBr20WCBCeAiEAoPZEpXtK_9O-2ayv-C4regrriCxMLPcpU64yG3a8YuE%3D&amp;title=%5BReview+Phim%5D+C%C3%B4+G%C3%A1i+C%C3%B3+%C4%90%C3%B4i+M%E1%BA%AFt+%C3%82m+D%C6%B0%C6%A1ng+Ch%E1%BA%A1m+Tr%C3%A1n+B%C3%A0+K%E1%BA%B9+%C4%90%C3%B4+Th%E1%BB%8B+Nh%E1%BA%ADt+B%E1%BA%A3n"
+                    data-ftype="mp3" data-fquality="128"><svg data-v-7ad0a490="" width="16" height="16"
+                      viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path data-v-7ad0a490="" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.47278 0H15.1307V7.99217H18.6227L9.97985 18.133L1.33703 7.99216H5.47278V0ZM0.643799 19H19.6438V22H0.643799V19Z"
+                        fill="white"></path>
+                    </svg><span class="visible-md">Download</span></a>
+                </td>
+              </tr>
+
+              <tr>
+                <td colspan="3" align="left">
+                  <svg style="width: 16px;height: auto;margin: -5px 5px 0 0;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 576 512">
+                    <path fill="currentColor"
+                      d="M0 128C0 92.7 28.7 64 64 64H320c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2V384c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1V320 192 174.9l14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z">
+                    </path>
+                  </svg>
+                  <strong>Video</strong>
+                </td>
+              </tr>
+              <tr>
+                <td> 360p (.mp4) <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-volume-up-fill" viewBox="0 0 16 16">
+                    <path
+                      d="M11.536 14.01A8.473 8.473 0 0 0 14.026 8a8.473 8.473 0 0 0-2.49-6.01l-.708.707A7.476 7.476 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303l.708.707z">
+                    </path>
+                    <path
+                      d="M10.121 12.596A6.48 6.48 0 0 0 12.025 8a6.48 6.48 0 0 0-1.904-4.596l-.707.707A5.483 5.483 0 0 1 11.025 8a5.483 5.483 0 0 1-1.61 3.89l.706.706z">
+                    </path>
+                    <path
+                      d="M8.707 11.182A4.486 4.486 0 0 0 10.025 8a4.486 4.486 0 0 0-1.318-3.182L8 5.525A3.489 3.489 0 0 1 9.025 8 3.49 3.49 0 0 1 8 10.475l.707.707zM6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06z">
+                    </path>
+                  </svg> </td>
+                <td>65.66M</td>
+                <td class="text-center">
+                  <a class="btn btn-success w-100" data-fid="HDsNq1zQ4oQ" data-ffid="18"
+                    data-nfunc="https%3A%2F%2Fan10.genyoutube.online%2F03dbdfab.nfunc.js"
+                    data-url="https://rr5---sn-h5q7knee.googlevideo.com/videoplayback?expire=1735319102&amp;ei=3oluZ5vZDZrRp-oP0a3awA4&amp;ip=188.114.111.27&amp;id=o-AE4oTIsCezxMbpSFmEPN5MHq4ZZMtifNaamTqTf9sosF&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1735297502%2C&amp;mh=2A&amp;mm=31%2C29&amp;mn=sn-h5q7knee%2Csn-h5qzened&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=24&amp;rms=au%2Cau&amp;initcwndbps=876250&amp;bui=AfMhrI-ueE3Vm6nwMbzaK_uhWd_OG7-vr1v_ldCs4aBG7yrz0sm-kgK7YXT0ra1ghc9iAn329D0UwOT6&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fmp4&amp;ns=mkfJEY84AjtdzDhbY6Q_DfwQ&amp;rqh=1&amp;gir=yes&amp;clen=68854740&amp;ratebypass=yes&amp;dur=1496.804&amp;lmt=1733520653104811&amp;mt=1735297276&amp;fvip=4&amp;fexp=51326932%2C51331020%2C51335594%2C51371294&amp;c=MWEB&amp;sefc=1&amp;txp=5538434&amp;n=edxNVwDKVqViUMpGY&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AJfQdSswRgIhAPr8vladD9Qc9mhqianDSGnfZHNRLYP7M6RaBFgrDd41AiEA0R8GUP6higXgHFqNfXjf90eJoorwTIvDH8hyL8_boqA%3D&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRgIhAIJshueRK-Nendvtdc6ZfQBogkrEhzCZibHBr20WCBCeAiEAoPZEpXtK_9O-2ayv-C4regrriCxMLPcpU64yG3a8YuE%3D&amp;title=%5BReview+Phim%5D+C%C3%B4+G%C3%A1i+C%C3%B3+%C4%90%C3%B4i+M%E1%BA%AFt+%C3%82m+D%C6%B0%C6%A1ng+Ch%E1%BA%A1m+Tr%C3%A1n+B%C3%A0+K%E1%BA%B9+%C4%90%C3%B4+Th%E1%BB%8B+Nh%E1%BA%ADt+B%E1%BA%A3n"
+                    target="_blank" rel="nofollow"
+                    href="https://rr5---sn-h5q7knee.googlevideo.com/videoplayback?expire=1735319102&amp;ei=3oluZ5vZDZrRp-oP0a3awA4&amp;ip=188.114.111.27&amp;id=o-AE4oTIsCezxMbpSFmEPN5MHq4ZZMtifNaamTqTf9sosF&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1735297502%2C&amp;mh=2A&amp;mm=31%2C29&amp;mn=sn-h5q7knee%2Csn-h5qzened&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=24&amp;rms=au%2Cau&amp;initcwndbps=876250&amp;bui=AfMhrI-ueE3Vm6nwMbzaK_uhWd_OG7-vr1v_ldCs4aBG7yrz0sm-kgK7YXT0ra1ghc9iAn329D0UwOT6&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fmp4&amp;ns=mkfJEY84AjtdzDhbY6Q_DfwQ&amp;rqh=1&amp;gir=yes&amp;clen=68854740&amp;ratebypass=yes&amp;dur=1496.804&amp;lmt=1733520653104811&amp;mt=1735297276&amp;fvip=4&amp;fexp=51326932%2C51331020%2C51335594%2C51371294&amp;c=MWEB&amp;sefc=1&amp;txp=5538434&amp;n=0qmamfM7vG1biQ&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AJfQdSswRgIhAPr8vladD9Qc9mhqianDSGnfZHNRLYP7M6RaBFgrDd41AiEA0R8GUP6higXgHFqNfXjf90eJoorwTIvDH8hyL8_boqA%3D&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRgIhAIJshueRK-Nendvtdc6ZfQBogkrEhzCZibHBr20WCBCeAiEAoPZEpXtK_9O-2ayv-C4regrriCxMLPcpU64yG3a8YuE%3D&amp;title=%5BReview+Phim%5D+C%C3%B4+G%C3%A1i+C%C3%B3+%C4%90%C3%B4i+M%E1%BA%AFt+%C3%82m+D%C6%B0%C6%A1ng+Ch%E1%BA%A1m+Tr%C3%A1n+B%C3%A0+K%E1%BA%B9+%C4%90%C3%B4+Th%E1%BB%8B+Nh%E1%BA%ADt+B%E1%BA%A3n"
+                    data-ftype="mp4" data-fquality="128"><svg data-v-7ad0a490="" width="16" height="16"
+                      viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path data-v-7ad0a490="" fill-rule="evenodd" clip-rule="evenodd"
+                        d="M5.47278 0H15.1307V7.99217H18.6227L9.97985 18.133L1.33703 7.99216H5.47278V0ZM0.643799 19H19.6438V22H0.643799V19Z"
+                        fill="white"></path>
+                    </svg><span class="visible-md">Download</span></a>
+                </td>
+              </tr>
+ 
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-12 col-sm-5 col-md-5">
+
+      <img class="img-thumbnail" src="https://i.ytimg.com/vi/HDsNq1zQ4oQ/0.jpg" alt="Youtube downloader thumbnail">
+      <div id="video_container" style="display: none"><video id="videoPlayer" class="w-100" nocontrols=""
+          src="https://rr5---sn-h5q7knee.googlevideo.com/videoplayback?expire=1735319102&amp;ei=3oluZ5vZDZrRp-oP0a3awA4&amp;ip=188.114.111.27&amp;id=o-AE4oTIsCezxMbpSFmEPN5MHq4ZZMtifNaamTqTf9sosF&amp;itag=18&amp;source=youtube&amp;requiressl=yes&amp;xpc=EgVo2aDSNQ%3D%3D&amp;met=1735297502%2C&amp;mh=2A&amp;mm=31%2C29&amp;mn=sn-h5q7knee%2Csn-h5qzened&amp;ms=au%2Crdu&amp;mv=m&amp;mvi=5&amp;pl=24&amp;rms=au%2Cau&amp;initcwndbps=876250&amp;bui=AfMhrI-ueE3Vm6nwMbzaK_uhWd_OG7-vr1v_ldCs4aBG7yrz0sm-kgK7YXT0ra1ghc9iAn329D0UwOT6&amp;vprv=1&amp;svpuc=1&amp;mime=video%2Fmp4&amp;ns=mkfJEY84AjtdzDhbY6Q_DfwQ&amp;rqh=1&amp;gir=yes&amp;clen=68854740&amp;ratebypass=yes&amp;dur=1496.804&amp;lmt=1733520653104811&amp;mt=1735297276&amp;fvip=4&amp;fexp=51326932%2C51331020%2C51335594%2C51371294&amp;c=MWEB&amp;sefc=1&amp;txp=5538434&amp;n=0qmamfM7vG1biQ&amp;sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cvprv%2Csvpuc%2Cmime%2Cns%2Crqh%2Cgir%2Cclen%2Cratebypass%2Cdur%2Clmt&amp;sig=AJfQdSswRgIhAPr8vladD9Qc9mhqianDSGnfZHNRLYP7M6RaBFgrDd41AiEA0R8GUP6higXgHFqNfXjf90eJoorwTIvDH8hyL8_boqA%3D&amp;lsparams=met%2Cmh%2Cmm%2Cmn%2Cms%2Cmv%2Cmvi%2Cpl%2Crms%2Cinitcwndbps&amp;lsig=AGluJ3MwRgIhAIJshueRK-Nendvtdc6ZfQBogkrEhzCZibHBr20WCBCeAiEAoPZEpXtK_9O-2ayv-C4regrriCxMLPcpU64yG3a8YuE%3D&amp;title=%5BReview+Phim%5D+C%C3%B4+G%C3%A1i+C%C3%B3+%C4%90%C3%B4i+M%E1%BA%AFt+%C3%82m+D%C6%B0%C6%A1ng+Ch%E1%BA%A1m+Tr%C3%A1n+B%C3%A0+K%E1%BA%B9+%C4%90%C3%B4+Th%E1%BB%8B+Nh%E1%BA%ADt+B%E1%BA%A3n"></video>
+      </div>
+ 
+ 
+    </div>
+   </div>
+</body>
+
 </html>
