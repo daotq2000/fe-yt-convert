@@ -3,4 +3,12 @@
 <loc>https://youtubedownload.click/</loc>
 <priority>1</priority>
 </url>
+<url>
+<loc>https://youtubedownload.click/index.html</loc>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://youtubedownload.click/facebook-download.html</loc>
+<priority>1</priority>
+</url>
 </urlset>
