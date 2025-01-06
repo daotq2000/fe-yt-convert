@@ -1,18 +1,4 @@
-headers.set("cookie","cf_clearance=EmB9VEgCzjJ0Sp29iNwT6.1hh61X8_Nr.heyj4VtKPk-1735284309-1.2.1.1-XBOpDkGDPAbwordycZODkR2U2ugL_.c9DLAsutJkcWwEQYbY1PipHX5fNAes1KY9gB5IhiI1ye5DbgC4hOhhgmiPV_eSgTU0jFABG1sBIm5Q2SO9yacB8HuL3b0.Gxww1oCWtKVo2htq2EDHVllZ7Kpx8i7lqpoWj1UOzKpAtA0qq_VbEX4f7Rkhf1pAr3DQ.uboT5z62Aa3d1GqA0PpxH7xbrjko2MmYsa0tcGyppUXqSF_mcz9XN.pXQ4pxkuQ6GdYl3ZWbnul7_JLNYSZzEjL3xYqaszqv4tQ81OhGhO7zNeIONNKPa7u7eZxdJmMpt_Ylsw08WLUx1X9SyAqY3LeWRCLpcjA7PafFpeuSFEl5MZ3KR1NZHGb0v8fP2NqScc_7kKur_pboxYpJIy4EbBQeP9fv18mzwQx50.u1MU; PHPSESSID=i5mu9ttmc7tc28bo04bep52jvd; pll_language=vi; _ga=GA1.1.281453217.1735284317; FCNEC=%5B%5B%22AKsRol9csD7B2_aUpqSF6RXwi1v4rAjhAbSR8916Qj3AQ2MNE-sVrg1TXVRXUKLgy1S6G6hwg7MJLF6WL_MnGiovru18U6vdkTGuBMSZ97udUkdFZAw5xHRGzDbh-aS6HkQiMa6VtCWdiD0vuiwST3OJpZdJfNUBcg%3D%3D%22%5D%2Cnull%2C%5B%5B2%2C%22%5Bnull%2C%5Bnull%2C3%2C%5B1735284318%2C329086000%5D%5D%5D%22%5D%5D%5D; _ga_2MQB3CYZ0H=GS1.1.1735284316.1.1.1735285188.0.0.0; __gads=ID=2d9207f82b2a3144:T=1735284316:RT=1735285188:S=ALNI_MbFBKiAOmJtVlF6CQnlFy9D5IsquQ; __gpi=UID=00000fbd2a4d8797:T=1735284316:RT=1735285188:S=ALNI_MaIcio56fQ2Zk-AeNyyEaS1ShtjXA; __eoi=ID=f5eb3c6cd9eaa535:T=1735284316:RT=1735285188:S=AA-AfjYmvuEVfSGDFjZxDYu1wsKP");
-headers.set("origin","https://snapdouyin.app");
-headers.set("pragma","no-cache");
-headers.set("priority","u=1, i");
-headers.set("referer","https://snapdouyin.app/vi/");
-headers.set("sec-ch-ua","Chromium";v="130", "Google Chrome";v="130", "Not?A_Brand";v="99");
-headers.set("sec-ch-ua-arch","x86");
-headers.set("sec-ch-ua-bitness","64");
-headers.set("sec-ch-ua-full-version","130.0.6723.69");
-headers.set("sec-ch-ua-full-version-list","Chromium";v="130.0.6723.69", "Google Chrome";v="130.0.6723.69", "Not?A_Brand";v="99.0.0.0");
-headers.set("sec-ch-ua-mobile","?0");
-headers.set("sec-ch-ua-model",");
-headers.set("sec-ch-ua-platform","Linux");
-headers.set("sec-ch-ua-platform-version","6.9.3");
-headers.set("sec-fetch-dest","empty");
-headers.set("sec-fetch-mode","cors");
-headers.set("sec-fetch-site","same-origin");
-headers.set("user-agent","Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36");
+User-agent: *
+Disallow: 
+
+Sitemap: https://youtubedownload.click/sitemap.xml
