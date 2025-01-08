@@ -1362,6 +1362,10 @@
     position: relative;
 }
 
+.featured-icon-box-1 {
+    position: relative;
+}
+
 .featured-icon-box .ttm-icon {
     margin-bottom: 0px;
 }
@@ -1432,6 +1436,12 @@ body {
 }
 
 .ttm-num:before {
+    counter-increment: section;
+    content: counter(section, decimal-leading-zero) " ";
+    font-size: 14px;
+    font-family: "Poppins", Arial, Helvetica, sans-serif;
+}
+.ttm-number:before {
     counter-increment: section;
     content: counter(section, decimal-leading-zero) " ";
     font-size: 14px;
