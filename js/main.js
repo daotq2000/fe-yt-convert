@@ -284,6 +284,8 @@
                 location.href = `${host}/download-facebook-video.html`;
             }else if (currentUrl.includes("tiktok")) {
                 location.href = `${host}/download-tiktok-video.html`;
+            }else{
+                location.href = `${host}/index.html`;
             }
             break;
           case "vi-VN":
