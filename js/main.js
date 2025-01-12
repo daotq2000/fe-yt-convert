@@ -259,8 +259,7 @@
     const langName = new Intl.DisplayNames([locale], {
       type: "language",
     }).of(intlLocale.language);
-
-    dropdownContent.innerHTML = "";
+    if(!dropdownContent) return;
 
     const otherLocales = locales.filter((loc) => loc !== locale);
     otherLocales.forEach((otherLocale) => {
@@ -299,7 +298,7 @@
         }
         setSelectedLocale(otherLocale);
     });
-      dropdownContent.appendChild(listEl);
+    dropdownContent.appendChild(listEl);
     });
 
     dropdownBtn.innerHTML = `<img  src="${getFlagSrc(
