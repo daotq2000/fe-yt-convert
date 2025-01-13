@@ -238,7 +238,7 @@
             '<p style="width:100%" class="alert alert-danger" role="alert">Please enter a valid YouTube link</p>';
           if (url == "" || url == null || url.length == 0) {
             var errorElement = $("#form").find(".alert");
-            debugger;
+            ;
             if (errorElement.length == 0) {
               $("#form").append(elementError);
             }
@@ -305,7 +305,7 @@
           $("body").addClass("modal-open");
           document.getElementById("loader-spin1").style.display = "";
         } else {
-          // debugger
+          // 
           document.getElementById("loader-spin1").style.display = "none";
           // $("#modalLoading").modal("hide");
           // $("body").removeClass("modal-open");

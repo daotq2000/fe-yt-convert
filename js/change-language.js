@@ -31,7 +31,7 @@ function setSelectedLocale(locale) {
         listEl.addEventListener("mousedown", function () {
             var currentUrl = location.href;
             var host = location.host.includes('youtubedownload.click') ? `https://${location.host}` : `http://${location.host}`;
-            debugger
+            
             switch (otherLocale) {
                 case "en-GB":
                     if (currentUrl.includes("index.html")) {
