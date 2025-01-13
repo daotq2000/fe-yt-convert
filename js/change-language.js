@@ -1,4 +1,4 @@
-const locales = ["en-GB", "vi-VN"];
+var locales = ["en-GB", "vi-VN"];
 
 function getFlagSrc(countryCode) {
     return /^[A-Z]{2}$/.test(countryCode)
@@ -6,24 +6,24 @@ function getFlagSrc(countryCode) {
         : "";
 }
 
-const dropdownBtn = document.getElementById("dropdown-btn");
-const dropdownContent = document.getElementById("dropdown-content");
+var dropdownBtn = document.getElementById("dropdown-btn");
+var dropdownContent = document.getElementById("dropdown-content");
 
 function setSelectedLocale(locale) {
-    const intlLocale = new Intl.Locale(locale);
-    const langName = new Intl.DisplayNames([locale], {
+    var intlLocale = new Intl.Locale(locale);
+    var langName = new Intl.DisplayNames([locale], {
         type: "language",
     }).of(intlLocale.language);
     if (!dropdownContent) return;
 
-    const otherLocales = locales.filter((loc) => loc !== locale);
+    var otherLocales = locales.filter((loc) => loc !== locale);
     otherLocales.forEach((otherLocale) => {
-        const otherIntlLocale = new Intl.Locale(otherLocale);
-        const otherLangName = new Intl.DisplayNames([otherLocale], {
+        var otherIntlLocale = new Intl.Locale(otherLocale);
+        var otherLangName = new Intl.DisplayNames([otherLocale], {
             type: "language",
         }).of(otherIntlLocale.language);
 
-        const listEl = document.createElement("li");
+        var listEl = document.createElement("li");
         listEl.innerHTML = `${otherLangName}<img  src="${getFlagSrc(
             otherIntlLocale.region
         )}" />`;
