@@ -27,11 +27,12 @@ if (localStorage.getItem('language') == null || localStorage.getItem('language')
 function changeLanguage(lang) {
     data.forEach(f => {
         if (f.code == lang) {
-            var currentHost = location.host ;
+            var currentHost = location.host =='youtubedownload.click'?`https://${location.host}`:`http://${location.host}` ;
             var currentUrl = location.pathname;
+            debugger
             if (lang == 'en') {
                 if (currentUrl == `` || currentUrl == null || currentUrl.includes('index.html') || currentUrl.includes('/')) {
-                    location.host = currentHost+'/index.html';
+                    location.href = currentHost+'/index.html';
                 } else if (currentUrl.includes(`facebook`)) {
                     location.href = currentHost + `/download-facebook-video.html`;
                 } else if (currentUrl.includes(`tiktok`)) {
