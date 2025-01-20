@@ -26,7 +26,7 @@ if (localStorage.getItem('language') == null || localStorage.getItem('language')
 function changeLanguage(lang) {
     data.forEach(f => {
         if (f.code == lang) {
-            var currentHost = location.host == 'youtubedownload.click'? 'https://youtubedownload.click':'http://127.0.0.1:5501';
+            var currentHost = location.host ;
             var currentUrl = location.pathname;
             if (lang == 'en') {
                 if (currentUrl == `` || currentUrl == null || currentUrl.includes('index.html') || currentUrl.includes('/')) {
