@@ -1,1 +1,58 @@
-function _0x3180(_0x2f51d5,_0xbfc555){var _0x3eb782=_0x3eb7();return _0x3180=function(_0x318056,_0x16d72c){_0x318056=_0x318056-0xf4;var _0x3689f0=_0x3eb782[_0x318056];return _0x3689f0;},_0x3180(_0x2f51d5,_0xbfc555);}var _0x3f56b1=_0x3180;(function(_0x4b0452,_0x22cc08){var _0xee5560=_0x3180,_0x2a0bea=_0x4b0452();while(!![]){try{var _0x4b6f96=-parseInt(_0xee5560(0x10f))/0x1+-parseInt(_0xee5560(0x10d))/0x2*(-parseInt(_0xee5560(0x112))/0x3)+parseInt(_0xee5560(0xf9))/0x4*(-parseInt(_0xee5560(0x10b))/0x5)+parseInt(_0xee5560(0xf7))/0x6*(parseInt(_0xee5560(0xfe))/0x7)+parseInt(_0xee5560(0xf8))/0x8+parseInt(_0xee5560(0x115))/0x9+-parseInt(_0xee5560(0xf6))/0xa;if(_0x4b6f96===_0x22cc08)break;else _0x2a0bea['push'](_0x2a0bea['shift']());}catch(_0x1f50bb){_0x2a0bea['push'](_0x2a0bea['shift']());}}}(_0x3eb7,0xe796b));var locales=[_0x3f56b1(0x104),_0x3f56b1(0x108)];function getFlagSrc(_0x246353){var _0x2c6d7f=_0x3f56b1;return/^[A-Z]{2}$/[_0x2c6d7f(0x10c)](_0x246353)?_0x2c6d7f(0x11e)+_0x246353[_0x2c6d7f(0xfd)]()+_0x2c6d7f(0xfb):'';}var dropdownBtn=document[_0x3f56b1(0x118)]('dropdown-btn'),dropdownContent=document[_0x3f56b1(0x118)](_0x3f56b1(0x11b));function setSelectedLocale(_0x51edfe){var _0x26f7ae=_0x3f56b1,_0x551dd7=new Intl[(_0x26f7ae(0x102))](_0x51edfe),_0x71622c=new Intl[(_0x26f7ae(0x11c))]([_0x51edfe],{'type':_0x26f7ae(0x10e)})['of'](_0x551dd7[_0x26f7ae(0x10e)]),_0x11fdef;dropdownContent&&(locales[_0x26f7ae(0x11d)](_0x220444=>_0x220444!==_0x51edfe)[_0x26f7ae(0x103)](_0x311f89=>{var _0x5c54f2=_0x26f7ae,_0x5bfbde=new Intl[(_0x5c54f2(0x102))](_0x311f89),_0x4dea23=new Intl[(_0x5c54f2(0x11c))]([_0x311f89],{'type':'language'})['of'](_0x5bfbde[_0x5c54f2(0x10e)]),_0x2d5a14=document['createElement']('li');_0x2d5a14[_0x5c54f2(0x119)]=_0x4dea23+_0x5c54f2(0xfa)+getFlagSrc(_0x5bfbde[_0x5c54f2(0x11a)])+'\x22\x20/>',_0x2d5a14[_0x5c54f2(0x101)]=_0x311f89,_0x2d5a14['addEventListener'](_0x5c54f2(0x120),function(){var _0x35ccb5=_0x5c54f2,_0x54ac5d=location[_0x35ccb5(0x105)],_0x10837c=location[_0x35ccb5(0x121)][_0x35ccb5(0x106)](_0x35ccb5(0x10a))?_0x35ccb5(0x107)+location[_0x35ccb5(0x121)]:_0x35ccb5(0xfc)+location[_0x35ccb5(0x121)];switch(_0x311f89){case _0x35ccb5(0x104):_0x54ac5d[_0x35ccb5(0x106)](_0x35ccb5(0xf4))?location['href']=_0x10837c+'/index.html':_0x54ac5d['includes'](_0x35ccb5(0x111))?location[_0x35ccb5(0x105)]=_0x10837c+'/download-facebook-video.html':_0x54ac5d[_0x35ccb5(0x106)](_0x35ccb5(0x114))?location[_0x35ccb5(0x105)]=_0x10837c+_0x35ccb5(0x116):location[_0x35ccb5(0x105)]=_0x10837c+_0x35ccb5(0x11f);break;case _0x35ccb5(0x108):_0x54ac5d['includes'](_0x35ccb5(0xf4))?location['href']=_0x10837c+_0x35ccb5(0x109):_0x54ac5d[_0x35ccb5(0x106)]('facebook')?location[_0x35ccb5(0x105)]=_0x10837c+_0x35ccb5(0x110):_0x54ac5d[_0x35ccb5(0x106)](_0x35ccb5(0x114))?location[_0x35ccb5(0x105)]=_0x10837c+_0x35ccb5(0xff):location[_0x35ccb5(0x105)]=_0x10837c+_0x35ccb5(0x109);}setSelectedLocale(_0x311f89);}),dropdownContent[_0x5c54f2(0x100)](_0x2d5a14);}),dropdownBtn[_0x26f7ae(0x119)]=_0x26f7ae(0xfa)+getFlagSrc(_0x551dd7[_0x26f7ae(0x11a)])+_0x26f7ae(0xf5)+_0x71622c+'<span\x20class=\x22arrow-down\x22></span>');}var lang=document[_0x3f56b1(0x113)]('html'),languageDefault=lang[0x0]['getAttribute'](_0x3f56b1(0x117)),langFilter=locales[_0x3f56b1(0x11d)](_0xd37533=>_0xd37533[_0x3f56b1(0x106)](languageDefault));setSelectedLocale(langFilter[0x0]);function _0x3eb7(){var _0x511b38=['toUpperCase','24052IhiEtw','/languagues/vi/download-tiktok-video.html','appendChild','value','Locale','forEach','en-GB','href','includes','https://','vi-VN','/languagues/vi/index.html','youtubedownload.click','4455950xjelbz','test','2FJFWnI','language','1144408ymaGQj','/languagues/vi/download-facebook-video.html','facebook','1234449dIIaDy','getElementsByTagName','tiktok','8675541GquNzY','/download-tiktok-video.html','lang','getElementById','innerHTML','region','dropdown-content','DisplayNames','filter','https://flagsapi.com/','/index.html','mousedown','host','index.html','\x22\x20/>','8570050tNFHPC','2736OEUMif','7191536CZRkzA','4XQLqjC','<img\x20\x20src=\x22','/shiny/64.png','http://'];_0x3eb7=function(){return _0x511b38;};return _0x3eb7();}
+var data = [{
+    name: "Tiếng Việt",
+    image: "https://flagsapi.com/VN/shiny/64.png",
+    code: "vi"
+},
+{
+    name: "English",
+    image: "https://flagsapi.com/GB/shiny/64.png",
+    code: "en"
+}
+]
+if (localStorage.getItem('language') == null || localStorage.getItem('language') == undefined) {
+    var userLang = navigator.language || navigator.userLanguage;
+    var filterLang = data.filter(f => f.code == userLang.toString().subString(0, 2));
+    var mainLang = 'us';
+    if (filterLang) {
+        mainLang = filterLang.code;
+        localStorage.setItem('language', mainLang);
+    }
+    changeLanguage(mainLang);
+} else {
+    
+    // changeLanguage(localStorage.getItem('language'))
+}
+ 
+function changeLanguage(lang) {
+    data.forEach(f => {
+        if (f.code == lang) {
+            var currentHost = location.host == 'youtubedownload.click'? 'https://youtubedownload.click':'http://127.0.0.1:5501';
+            var currentUrl = location.pathname;
+            if (lang == 'en') {
+                if (currentUrl == `` || currentUrl == null || currentUrl.includes('index.html') || currentUrl.includes('/')) {
+                    location.host = currentHost+'/index.html';
+                } else if (currentUrl.includes(`facebook`)) {
+                    location.href = currentHost + `/download-facebook-video.html`;
+                } else if (currentUrl.includes(`tiktok`)) {
+                    location.href = currentHost + `/download-tiktok-video.html`;
+                } else if (currentUrl.includes(`youtube`)) {
+                    location.href = currentHost + `/download-youtube-video.html`;
+                } else if (currentUrl.includes(`instagram`)) {
+                    location.href = currentHost + `/instagram-download-video.html`;
+                }
+            } else {
+                if (currentUrl == `` || currentUrl == null | currentUrl.includes('index.html') || currentUrl.includes('/')) {
+                    location.href =  currentHost + `/languagues/${lang}/index.html`;
+                } else if (currentUrl.includes(`facebook`)) {
+                    location.href = currentHost + `/languagues/${lang}/download-facebook-video.html`;
+                } else if (currentUrl.includes(`tiktok`)) {
+                    location.href = currentHost + `/languagues/${lang}/download-tiktok-video.html`;
+                } else if (currentUrl.includes(`youtube`)) {
+                    location.href = currentHost + `/languagues/${lang}/download-youtube-video.html`;
+                } else if (currentUrl.includes(`instagram`)) {
+                    location.href = currentHost + `/languagues/${lang}/instagram-download-video.html`;
+                }
+            }
+        }
+    })
+}
