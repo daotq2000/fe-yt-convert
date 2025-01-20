@@ -11,7 +11,8 @@ var data = [{
 ]
 if (localStorage.getItem('language') == null || localStorage.getItem('language') == undefined) {
     var userLang = navigator.language || navigator.userLanguage;
-    var filterLang = data.filter(f => f.code == userLang.toString().subString(0, 2));
+    console.log(userLang)
+    var filterLang = data.filter(f => f.code == userLang.toString().substr(0, 2));
     var mainLang = 'us';
     if (filterLang) {
         mainLang = filterLang.code;
