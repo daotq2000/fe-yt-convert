@@ -1,4 +1,7 @@
-User-agent: *
-Disallow: 
+User-agent: Googlebot
+Disallow: /nogooglebot/
 
-Sitemap: https://youtubedownload.click/sitemap.xml
+User-agent: *
+Allow: /
+
+Sitemap: http://youtubedownload.click/sitemap.xml
