@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: http://youtubedownload.click/sitemap.xml
+Sitemap: https://youtubedownload.click/sitemap.xml
