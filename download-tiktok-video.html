@@ -825,7 +825,8 @@
   </script>
   <!-- Javascript end-->
   <script>
-    const HOST = "https://api.youtubedownload.click/";
+   const HOST = "https://ndbssdm5s0.execute-api.ap-southeast-1.amazonaws.com/test";
+//    const HOST = "https://api.youtubedownload.click/";
     // const HOST = "http://localhost:8080";
     const PATH_API_DOWNLOAD_VIDEO = "/proxy.php";
     const DOWN_LINK = "/mates/en/convert";
@@ -1000,7 +1001,7 @@
         const loader = buttonSubmit.querySelector(".loader");
         const buttonText = buttonSubmit.querySelector(".button-text");
         var mhash = murmurHash64(url);
-        var uri = `${HOST}${fullUrl}${PATH_API_DOWNLOAD_VIDEO}`;
+        var uri = `${HOST}${fullUrl}${PATH_API_DOWNLOAD_VIDEO}?a=1`;
         var body = `url=${url}&mhash=${mhash}`;
         if (isValid) {
           fetchPreview(uri, body);
