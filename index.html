@@ -856,8 +856,8 @@ background: linear-gradient(0deg, rgba(255,0,0,1) 9%, rgba(255,255,255,1) 100%);
     </script>
     <!-- Javascript end-->
     <script>
-       const HOST = "https://ndbssdm5s0.execute-api.ap-southeast-1.amazonaws.com/prod";
-//    const HOST = "https://api.youtubedownload.click/";
+        const HOST = "https://ndbssdm5s0.execute-api.ap-southeast-1.amazonaws.com/prod";
+        //    const HOST = "https://api.youtubedownload.click/";
         // const HOST = "http://localhost:8080";
         const PATH_API_DOWNLOAD_VIDEO = "/mates/en/analyze/ajax";
         const DOWN_LINK = "/mates/en/convert";
@@ -1005,7 +1005,7 @@ background: linear-gradient(0deg, rgba(255,0,0,1) 9%, rgba(255,255,255,1) 100%);
             );
         }
         function getDownloadHost(id) {
-            return `${HOST}${DOWN_LINK}?id=${id}`;
+            return `${HOST}${DOWN_LINK}?id=${encodeURIComponent(id)}`;
         }
         var a_busy = false;
         var downloadUrl = {
@@ -1080,10 +1080,6 @@ background: linear-gradient(0deg, rgba(255,0,0,1) 9%, rgba(255,255,255,1) 100%);
             d_busy = true;
             status_stop = false;
             $.ajax({
-                type: "POST",
-                headers: {
-                    "x-note": note,
-                },
                 url: getDownloadHost(id),
                 data: {
                     platform: "youtube",
@@ -1094,6 +1090,9 @@ background: linear-gradient(0deg, rgba(255,0,0,1) 9%, rgba(255,255,255,1) 100%);
                     note: note,
                     format: format,
                 },
+                method: "POST",
+                mode: "cors",
+                credentials: "omit",
                 success: function (kdata) {
                     console.log("kdata", kdata);
                     var body = JSON.parse(kdata);
